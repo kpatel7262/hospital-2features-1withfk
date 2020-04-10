@@ -1,0 +1,28 @@
+﻿@model Hospitalproject.Models.RemedySource
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.RemedySource_name</h2>
+        <a href="/RemedySource/List">Back to List</a>
+        <div>
+            <div>URL:@Model.RemedySource_url</div>
+        </div>
+        <div class="controls">
+            <a href="/RemedySource/Update/@Model.RemedySource_id" class="control-button">Update</a>
+            <a href="/RemedySource/Delete/@Model.RemedySource_id" class="control-button">Delete</a>
+        </div>
+
+    </div>
+</body>
+</html>
+

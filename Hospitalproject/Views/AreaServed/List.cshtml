@@ -1,0 +1,52 @@
+﻿@model List<Hospitalproject.Models.AreaServed>
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>List of Remedy Sources</h2>
+    <a href="/AreaServed/New">Add Served Areas for Social Service Clubs</a>
+    <div class="paginate">
+        @{
+            <a href="/AreaServed/List?pagenum=@((int)ViewData["pagenum"]-1)&areasearchkey=@ViewData["areasearchkey"]">Prev</a>
+            @ViewData["pagesummary"]
+            <a href="/AreaServed/List?pagenum=@((int)ViewData["pagenum"]+1)&areasearchkey=@ViewData["areasearchkey"]">Next</a>
+        }
+    </div>
+    <form action="/AreaServed/List" method="GET">
+        <input type="text" name="areasearchkey" id="areasearchkey" />
+        <input type="submit" value="Search" />
+    </form>
+    <div class="col-lg-12">
+        @{
+            foreach (var areas in Model)
+            {
+                <div class="col-md-4">
+                    <p><a href="/AreaServed/View/@areas.AreaServed_id">@areas.AreaServed_name</a></p>
+                    
+
+                    <p>
+                        <a href="/RemedySource/Update/@areas.AreaServed_id" class="btn btn-default" type="button">Update</a>
+                        <a href="/RemedySource/Delete/@areas.AreaServed_id" class="btn btn-default" type="button">Delete</a>
+                    </p>
+                </div>
+
+            }
+
+        }
+
+    </div>
+</body>
+</html>

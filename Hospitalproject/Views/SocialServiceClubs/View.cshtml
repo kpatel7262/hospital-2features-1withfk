@@ -1,0 +1,29 @@
+﻿@model Hospitalproject.Models.SocialServiceClubs
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.SocialServiceClubs_title</h2>
+        <a href="/SocialServiceClubs/List">Back to List</a>
+        <div>
+            <div>Title:@Model.SocialServiceClubs_title</div>
+            <div>Details:@Model.SocialServiceClubs_details</div>
+            <div>Location:@Model.SocialServiceClubs_address</div>
+        </div>
+        <div class="controls">
+            <a href="/SocialServiceClubs/Update/@Model.SocialServiceClubs_id" class="control-button">Update</a>
+            <a href="/SocialServiceClubs/Delete/@Model.SocialServiceClubs_id" class="control-button">Delete</a>
+        </div>
+
+    </div>
+</body>
+</html>

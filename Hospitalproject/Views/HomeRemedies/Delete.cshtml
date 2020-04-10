@@ -1,0 +1,27 @@
+﻿@model Hospitalproject.Models.HomeRemedies
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Are you sure you want to delelte this remedy?.</h2>
+        
+        <a href="/HomeRemedies/List">No</a>
+        <div>Title:@Model.HomeRemedies_title</div>
+        <div class="controls">
+            <form method="post" action="/HomeRemedies/Delete/@Model.HomeRemedies_id">
+                <input type="submit" value="Delete" />
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

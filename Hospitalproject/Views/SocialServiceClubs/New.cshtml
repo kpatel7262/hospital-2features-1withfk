@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "New Social Service Clubs";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New Social Service Club</title>
+</head>
+<body>
+    <h2>Add a Club info</h2>
+    <a href="/SocialServiceClubs/List">Back to List</a>
+    <div>
+        <form method="POST" action="/SocialServiceClubs/New">
+            <div>
+                <label for="SocialServiceClubs_title">Title:</label>
+                <input type="text" name="SocialServiceClubs_title" id="SocialServiceClubs_title" />
+            </div>
+            <div>
+                <label for="SocialServiceClubs_details">Details:</label>
+                <input type="text" name="SocialServiceClubs_details" id="SocialServiceClubs_details" />
+            </div>
+            <div>
+                <label for="SocialServiceClubs_address">Address:</label>
+                <input type="text" name="SocialServiceClubs_address" id="SocialServiceClubs_address" />
+            </div>
+            
+            <div>
+                <input type="submit" value="Add" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

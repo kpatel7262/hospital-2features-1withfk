@@ -1,0 +1,28 @@
+﻿@model Hospitalproject.Models.HomeRemedies
+@{
+    ViewBag.Title = "User_view";
+}
+
+<h2>User_view</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.HomeRemedies_title</h2>
+        <a href="/HomeRemedies/List">Back to List</a>
+        <div>
+            <div>Title:@Model.HomeRemedies_title</div>
+            <div>Description:@Model.HomeRemedies_desc</div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
+

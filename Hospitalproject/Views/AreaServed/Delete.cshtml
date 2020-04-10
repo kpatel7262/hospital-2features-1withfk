@@ -1,0 +1,27 @@
+﻿@model Hospitalproject.Models.AreaServed
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Are you sure you want to delelte this Area from the Served Area list?</h2>
+
+        <a href="/AreaServed/List">No</a>
+        <div>Website:@Model.AreaServed_name</div>
+        <div class="controls">
+            <form method="post" action="/AreaServed/Delete/@Model.AreaServed_id">
+                <input type="submit" value="Delete" />
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

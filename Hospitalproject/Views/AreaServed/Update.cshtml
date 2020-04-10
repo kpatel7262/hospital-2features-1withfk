@@ -1,0 +1,32 @@
+﻿@model Hospitalproject.Models.AreaServed
+@{
+    ViewBag.Title = "Update Served Area";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>Edit Details for @Model.AreaServed_name</h2>
+    <a href="/AreaServed/List">Back to List</a>
+    <div>
+        <form method="post" action="/AreaServed/Update/@Model.AreaServed_id">
+            <div>
+                <label for="AreaServed_name">Area Name:</label>
+                <input type="text" name="AreaServed_name" id="AreaServed_name" value="@Model.AreaServed_name" />
+            </div>
+
+
+            <div class="controls">
+                <input type="submit" value="Update" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
+

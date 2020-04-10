@@ -1,0 +1,50 @@
+﻿@model List<Hospitalproject.Models.HomeRemedies>
+
+@{
+    ViewBag.Title = "User_list";
+}
+
+<h2>User_list</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>List of Home Remedies</h2>
+    <a href="/HomeRemedies/New">Add New Remedy</a>
+    <div class="paginate">
+        @{
+            <a href="/HomeRemedies/List?pagenum=@((int)ViewData["pagenum"]-1)&remedysearchkey=@ViewData["remedysearchkey"]">Prev</a>
+            @ViewData["pagesummary"]
+            <a href="/HomeRemedies/List?pagenum=@((int)ViewData["pagenum"]+1)&remedysearchkey=@ViewData["remedysearchkey"]">Next</a>
+        }
+    </div>
+    <form action="/HomeRemedies/List" method="GET">
+        <input type="text" name="remedysearchkey" id="remedysearchkey" />
+        <input type="submit" value="Search" />
+    </form>
+    <div class="col-lg-12">
+        @{
+            foreach (var remedy in Model)
+            {
+                <div class="col-md-4">
+                    <h3><a href="/HomeRemedies/User_view/@remedy.HomeRemedies_id">@remedy.HomeRemedies_title</a></h3>
+                    <p>@remedy.HomeRemedies_desc</p>
+                    <input type="hidden" value="@remedy.RemedySource_id" />
+                    <p>@remedy.RemedySource.RemedySource_name</p>
+
+
+
+                </div>
+
+            }
+
+        }
+
+    </div>
+</body>
+</html>

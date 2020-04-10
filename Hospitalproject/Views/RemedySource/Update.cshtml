@@ -1,0 +1,35 @@
+﻿@model Hospitalproject.Models.RemedySource
+@{
+    ViewBag.Title = "Update Remedy Source";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>Edit Details for @Model.RemedySource_name</h2>
+    <a href="/RemedySource/List">Back to List</a>
+    <div>
+        <form method="post" action="/RemedySource/Update/@Model.RemedySource_id">
+            <div>
+                <label for="RemedySource_name">Name:</label>
+                <input type="text" name="RemedySource_name" id="RemedySource_name" value="@Model.RemedySource_name" />
+            </div>
+            <div>
+                <label for="RemedySource_url">URL:</label>
+                <input type="url" name="RemedySource_url" id="RemedySource_url" value="@Model.RemedySource_url" />
+            </div>
+
+            <div class="controls">
+                <input type="submit" value="Update" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
+
